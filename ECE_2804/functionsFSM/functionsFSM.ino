@@ -33,7 +33,7 @@ int Sm[] = {501, 528, 552, 577, 603, 644, 695, 747, 796, 857, 935, 1013};
 int Lg[] = {522, 548, 573, 597, 630, 665, 716, 767, 816, 878, 955, 1023};
 char symbol[] = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '0', '#'};
 int savedPassword = 0, i = 0, typed = -1;
-char d;
+char d, c;
 
 char keyPress(){
   int count = 0, returnVal = -1;
@@ -65,10 +65,9 @@ char keyPress(){
 char decideMode(){
   Serial.println("Type * to open the locker and # to save a new password to memory");
   while(1){
-    if(keyPress() == '*')
-      return '*';
-    if(keyPress() == '#')
-      return '#';
+    c = keyPress();
+    if(c == '*' || c == '#')
+      return c;
   }
 }
 
