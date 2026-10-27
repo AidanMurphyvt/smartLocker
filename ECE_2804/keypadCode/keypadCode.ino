@@ -1,3 +1,5 @@
+#include <EEPROM.h>
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
@@ -28,8 +30,6 @@ void loop() {
       if((curr >= low[i]) & (curr <= high[i])){
         if(((prev >= low[i]) & (prev <= high[i]))){
           count ++;
-          Serial.print("Value inputted is : ");
-          Serial.println(curr);
             if(count == 3){
               Serial.print(key[i]);
               Serial.println(" pressed");
