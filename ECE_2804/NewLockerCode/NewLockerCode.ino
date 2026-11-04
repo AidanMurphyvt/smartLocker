@@ -1,8 +1,13 @@
+//new function: checks for servo being blocked:
+
+
+
+
+
 void EEPROM_write(unsigned int uiAddress, unsigned char ucData)
 {
 /* Wait for completion of previous write */
-while(EECR & (1<<EEPE))
-;
+while(EECR & (1<<EEPE));
 /* Set up address and Data Registers */
 EEAR = uiAddress;
 EEDR = ucData;
