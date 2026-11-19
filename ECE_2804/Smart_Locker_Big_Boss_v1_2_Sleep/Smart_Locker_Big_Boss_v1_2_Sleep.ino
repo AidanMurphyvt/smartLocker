@@ -552,8 +552,16 @@ void setup() {
     enableServoPower();
   }
 
-  loadPassword();
-  setupServoTimer1();
+
+loadPassword();
+
+Serial.print(F("Stored EEPROM Password: "));
+Serial.println(savedPassword);
+
+setupServoTimer1();
+
+  // loadPassword();
+  // setupServoTimer1();
   analogWrite(statusLedPin, 255);
   lastActivity = millis();
 
